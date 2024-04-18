@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <title>Technogaze </title>
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+    <link rel="stylesheet" href="assets/fonts/font-icon/css/all.css" type="text/css" />
+    
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <!-- <link rel="stylesheet" href='../src/StyleSheet/AboutCss.css'> -->
+    
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+    
+      gmpx-store-locator {
+        width: 100%;
+        height: 100%;
+    
+        /* These parameters customize the appearance of Locator Plus. See the documentation at
+           https://github.com/googlemaps/extended-component-library/blob/main/src/store_locator/README.md
+           for more information. */
+        --gmpx-color-surface: #fff;
+        --gmpx-color-on-surface: #212121;
+        --gmpx-color-on-surface-variant: #757575;
+        --gmpx-color-primary: #1967d2;
+        --gmpx-color-outline: #e0e0e0;
+        --gmpx-fixed-panel-width-row-layout: 28.5em;
+        --gmpx-fixed-panel-height-column-layout: 65%;
+        --gmpx-font-family-base: "Roboto", sans-serif;
+        --gmpx-font-family-headings: "Roboto", sans-serif;
+        --gmpx-font-size-base: 0.875rem;
+        --gmpx-hours-color-open: #188038;
+        --gmpx-hours-color-closed: #d50000;
+        --gmpx-rating-color: #ffb300;
+        --gmpx-rating-color-empty: #e0e0e0;
+      }
+    </style>
+    <script>
+      const CONFIGURATION = {
+        "locations": [
+          {"title":"TechnoGaze : Digital Marketing Company \u0026 Training | Course | SEO | SMM | Website Design in Bhopal","address1":"Plot No -1","address2":"1st floor, KK Plaza, Anna Nagar, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011, India","coords":{"lat":23.23149243236841,"lng":77.43313582209014},"placeId":"ChIJrT_ucmdCfDkRBg6HAyI_9UQ","actions":[{"label":"Book appointment","defaultUrl":"https://technogaze.com/"}]}
+        ],
+        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
+        "mapsApiKey": "YOUR_API_KEY_HERE",
+        "capabilities": {"input":false,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false,"actions":true}
+      };
+    
+    </script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', async () => {
+        await customElements.whenDefined('gmpx-store-locator');
+        const locator = document.querySelector('gmpx-store-locator');
+        locator.configureFromQuickBuilder(CONFIGURATION);
+      });
+    </script>
+    
+    </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-containerr', {
+    slidesPerView: 5, // Show only 5 slides at a time
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 2, // Show only 5 slides at a time
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    loop: true,
+    autoplay: {
+      delay: 5000000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+<script>
+   let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const slideNumber = document.querySelector('.slide-number');
+
+function showSlide(n) {
+  slides.forEach(slide => {
+    slide.style.display = 'none';
+  });
+  slides[n].style.display = 'block';
+  //slideNumber.textContent = `${n + 1} / ${slides.length}`;
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<script>
+// Time line
+
+ //set up global variables for all functions to use
+ var item = '.timeline-item';
+  var content = '.p-timeline-content';
+  var active = 'i-is-active';
+  
+  //Handling events
+  $('.timeline-item').on('click', function(){ showTimelineContent(this); });
+  $('.close').on('click', function(){ closeCurrentContent(this); });
+
+  function showTimelineContent(element){
+    var itemId = $(element).find('.p-timeline-carmodel').attr('data-car');
+    var highlighted = $(element).find('.p-timeline-carmodel');
+
+    //Prevent having multiple items with the class i-is-active
+    if($(item).hasClass(active)){ $(item).removeClass(active); }
+  
+    //grab the id from the data attribute of each contentblock
+    $(content).each(function(){
+      var contentid = $(this).attr('data-car');
+
+      //check if timeline item id is equal to the content id
+      //If they're equal, show the content associated to that timeline item
+      if(itemId == contentid){
+        var current = $(content +'[data-car="'+contentid+'"]');
+        $(current).addClass(active);
+        $(element).addClass(active);
+
+        //If the content is not the selected (current) one
+        $(content).not(current).removeClass(active);
+
+        //Scroll to shown content
+        var target= $(current);
+        $('html, body').stop().animate({ scrollTop: target.offset().top }, 1000);
+      }
+    });
+  }
+
+ function closeCurrentContent(event){
+    var contentblock = $(event).parents(content);
+    var contentid = $(contentblock).attr('data-car');
+    $(item).each(function(){
+      var itemId = $(this).find('.p-timeline-carmodel').attr('data-car');
+      
+      if(itemId == contentid){
+        //move page back to timeline
+        var target= $('.timeline-title');
+        $('html, body').stop().animate({ scrollTop: target.offset().top }, 1000);
+        
+        //remove class i-is-active from highlighted item 
+        var currentItem = $(this).removeClass(active);
+        contentblock.removeClass(active);
+
+      }
+    });
+  }
+
+
+//ENd
+
+
+
+   
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .carousel-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
